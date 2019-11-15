@@ -1,0 +1,479 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>需求二 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="task.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="task.html">
+            
+                <a href="task.html">
+            
+                    
+                    需求二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="task.html">
+            
+                <a href="task.html#数据的预处理">
+            
+                    
+                    数据预处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="task.html">
+            
+                <a href="task.html#统计">
+            
+                    
+                    统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="task.html">
+            
+                <a href="task.html#需求三">
+            
+                    
+                    需求三
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >需求二</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9700;&#x6C42;&#x4E8C;&#xFF1A;">&#x9700;&#x6C42;&#x4E8C;&#xFF1A;</h1>
+<h2 id="&#x6570;&#x636E;&#x7684;&#x9884;&#x5904;&#x7406;">&#x6570;&#x636E;&#x7684;&#x9884;&#x5904;&#x7406;</h2>
+<pre><code>             ################   &#x9884;&#x5904;&#x7406;&#x6570;&#x636E;    ##############
+#&#x5C06;url&#x5207;&#x5272;&#x6210;&#x4E00;&#x6BB5;&#x4E00;&#x6BB5;&#x7684;&#x5E76;&#x653E;&#x5165;[]
+def split_path(paths):
+    path_list = paths.split(&quot;/&quot;)
+    repath_list=[]
+    for path in path_list:
+        if path.find(&quot;?&quot;) != -1:
+            repath_list.append(path.split(&quot;?&quot;)[0])
+        elif path != &quot;&quot;:
+            repath_list.append(path)
+    return repath_list
+
+#&#x5C06;&#x540C;&#x4E00;&#x4E2A;.gov.cn&#x4E0B;&#x653E;&#x5165;&#x540C;&#x4E00;&#x4E2A;()
+def str_add(x,y):
+    x.extend(y)
+    return x
+def resolution_line(x):
+    path_list = split_path(x[1])
+    return (x[0],[path_list])
+
+#&#x5C06;&#x540C;&#x4E00;&#x4E2A;&#xFF08;&#xFF09;&#x4E0B;&#x7684;&#x53BB;&#x91CD;
+def duplicate_removal(tup1):
+    list_path1=[]
+    list_path = tup1[1]
+    for i in range(len(list_path)):
+        path1=list_path[i]
+        flag = 1
+        for j in range(i+1, len(list_path)):
+            path2=list_path[j]
+            if(path1 == path2):
+                flag = 0
+                break
+        if(flag == 1 and path1!= []):
+            list_path1.append(path1)
+    return (tup1[0],list_path1)
+
+
+# &#x8BFB;&#x5165;&#x6570;&#x636E;
+exDf = df.filter(df.requestHost.endswith(&apos;gov.cn&apos;))
+host_url_df = exDf.select(&quot;requestHost&quot;,&quot;requestURL&quot;)
+
+#&#x89E3;&#x6790;&#x4E2A;url&#xFF0C;resolution_line&#x51FD;&#x6570;&#x4F7F;&#x5F97;&#xFF0C;&#x6BCF;&#x4E2A;url &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#x4F8B;&#x5982; (&quot;XX.gov.cn&quot;,[u&apos;img&apos;, u&apos;hdbg.jpg&apos;])
+
+#&#x5229;&#x7528;reduceByKey &#x4EE5;&#x53CA;&#x51FD;&#x6570;add_str &#x5408;&#x5E76;&#x76F8;&#x540C;&#x7684;&#x201C;XX.gov.cn&#x201D;&#x7684;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#x4F8B;&#xFF0C;&#x5982;
+#(u&apos;kjbm3.mof.gov.cn&apos;,
+  [[u&apos;inc&apos;, u&apos;jquery&apos;, u&apos;js&apos;, u&apos;jquery.min.js&apos;],
+   [u&apos;img&apos;, u&apos;dotp.png&apos;],
+   [u&apos;img&apos;, u&apos;back.png&apos;],
+   [u&apos;img&apos;, u&apos;inde_05.png&apos;],
+   [u&apos;ksbm&apos;, u&apos;error.jsp&apos;]])
+
+host_url_rdd = host_url_df.rdd.map(lambda x: resolution_line(x)).reduceByKey(lambda x,y:str_add(x,y))
+#&#x53BB;&#x9664;&#x6BCF;&#x4E2A;&#x5143;&#x7EC4;&#x4E2D;&#x76F8;&#x540C;&#x7684;&#x8FDE;&#x63A5;
+host_url_duplicate_rdd = host_url_rdd.map(lambda x: duplicate_removal(x))
+</code></pre><p>&#x9884;&#x5904;&#x7406;&#x5B8C;&#x6210;&#x540E;,&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5982;&#x4E0B;</p>
+<pre><code>[(u&apos;kjbm6.mof.gov.cn&apos;,
+  [[u&apos;img&apos;, u&apos;inde_05.png&apos;],
+   [u&apos;inc&apos;, u&apos;selectmobil.js&apos;],
+   [u&apos;login.jsp&apos;],
+   [u&apos;loginin.jsp&apos;],
+   [u&apos;inc&apos;, u&apos;jquery&apos;, u&apos;js&apos;, u&apos;jquery.min.js&apos;],
+   [u&apos;img&apos;, u&apos;inde_06.gif&apos;],
+   [u&apos;ksbm&apos;, u&apos;xy.jsp&apos;],
+   [u&apos;img&apos;, u&apos;lgdot_01.gif&apos;],
+   [u&apos;inc&apos;, u&apos;sha256.js&apos;],
+   [u&apos;inc&apos;, u&apos;inc.js&apos;],
+   [u&apos;img&apos;, u&apos;inde_07.png&apos;],
+   [u&apos;inc&apos;, u&apos;photosetup.exe&apos;],
+   [u&apos;ksbm&apos;, u&apos;xsf.jsp&apos;],
+   [u&apos;img&apos;, u&apos;lgbg.jpg&apos;],
+   [u&apos;check.jsp&apos;],
+   [u&apos;ksbm&apos;, u&apos;home.jsp&apos;],
+   [u&apos;inc&apos;, u&apos;jquery-ui&apos;, u&apos;jquery-ui.min.css&apos;],
+   [u&apos;img&apos;, u&apos;home_menu1.jpg&apos;],
+   [u&apos;img&apos;, u&apos;home_menu11.jpg&apos;],
+   [u&apos;img&apos;, u&apos;home_menu8.jpg&apos;],
+   [u&apos;img&apos;, u&apos;home_menu7.jpg&apos;],
+   [u&apos;img&apos;, u&apos;home_menu6.jpg&apos;],
+   [u&apos;img&apos;, u&apos;home_menu3.jpg&apos;],
+   [u&apos;img&apos;, u&apos;home_menu4.jpg&apos;],
+   [u&apos;img&apos;, u&apos;home_menu10.jpg&apos;],
+   [u&apos;inc&apos;, u&apos;jquery-ui&apos;, u&apos;images&apos;, u&apos;ui-icons_ef8c08_256x240.png&apos;],
+   [u&apos;img&apos;, u&apos;home_icon1.png&apos;],
+   [u&apos;ksbm&apos;, u&apos;userbminfo.jsp&apos;],
+   [u&apos;css&apos;, u&apos;style.css&apos;],
+   [u&apos;img&apos;, u&apos;headbg.jpg&apos;],
+   [u&apos;ksbm&apos;, u&apos;lc.jsp&apos;],
+   [u&apos;img&apos;, u&apos;inde_00.png&apos;],
+   [u&apos;ksbm&apos;, u&apos;error.jsp&apos;],
+   [u&apos;index.jsp&apos;],
+   [u&apos;img&apos;, u&apos;inde_09.png&apos;],
+   [u&apos;img&apos;, u&apos;inde_08.png&apos;],
+   [u&apos;images&apos;, u&apos;syh.gif&apos;],
+   [u&apos;inc&apos;, u&apos;jquery-ui&apos;, u&apos;jquery-ui.min.js&apos;],
+   [u&apos;images&apos;, u&apos;dsyh.gif&apos;],
+   [u&apos;img&apos;, u&apos;new_arrow.png&apos;],
+   [u&apos;ksbm&apos;, u&apos;ptset.jsp&apos;],
+   [u&apos;inc&apos;, u&apos;img.jsp&apos;],
+   [u&apos;sskb&apos;, u&apos;images&apos;, u&apos;bmddl.gif&apos;],
+   [u&apos;favicon.ico&apos;]]),
+ (u&apos;kjbm3.mof.gov.cn&apos;,
+  [[u&apos;inc&apos;, u&apos;jquery&apos;, u&apos;js&apos;, u&apos;jquery.min.js&apos;],
+   [u&apos;img&apos;, u&apos;dotp.png&apos;],
+   [u&apos;img&apos;, u&apos;back.png&apos;],
+   [u&apos;img&apos;, u&apos;inde_05.png&apos;],
+   [u&apos;ksbm&apos;, u&apos;error.jsp&apos;],
+   [u&apos;kjbm&apos;, u&apos;img&apos;, u&apos;inde_00.png&apos;],
+   [u&apos;img&apos;, u&apos;lgbg.jpg&apos;],
+   [u&apos;images&apos;, u&apos;bg.gif&apos;],
+   [u&apos;images&apos;, u&apos;error.gif&apos;],
+   [u&apos;ksbm&apos;, u&apos;cxmm.jsp&apos;],
+   [u&apos;loginin.jsp&apos;],
+   [u&apos;inc&apos;, u&apos;sha256.js&apos;],
+   [u&apos;img&apos;, u&apos;lgdot_03.gif&apos;],
+   [u&apos;index.jsp&apos;],
+   [u&apos;css&apos;, u&apos;style.css&apos;],
+   [u&apos;img&apos;, u&apos;inde_08.png&apos;],
+   [u&apos;img&apos;, u&apos;inde_07.png&apos;],
+   [u&apos;login.jsp&apos;],
+   [u&apos;favicon.ico&apos;],
+   [u&apos;img&apos;, u&apos;lgdot_01.gif&apos;],
+   [u&apos;inc&apos;, u&apos;selectmobil.js&apos;],
+   [u&apos;images&apos;, u&apos;sdb.css&apos;],
+   [u&apos;check.jsp&apos;],
+   [u&apos;img&apos;, u&apos;inde_06.gif&apos;],
+   [u&apos;img&apos;, u&apos;reg-order-h.gif&apos;],
+   [u&apos;img&apos;, u&apos;hdbg.jpg&apos;],
+   [u&apos;inc&apos;, u&apos;img.jsp&apos;],
+   [u&apos;ksbm&apos;, u&apos;cxbmxhresult.jsp&apos;],
+   [u&apos;inc&apos;, u&apos;inc.js&apos;],
+   [u&apos;img&apos;, u&apos;headbg.jpg&apos;],
+   [u&apos;ksbm&apos;, u&apos;ptset.jsp&apos;]]),
+ (u&apos;www.sasac.gov.cn&apos;,
+  [[u&apos;n2588025&apos;, u&apos;n2588119&apos;, u&apos;index.html&apos;],
+   [u&apos;n2588025&apos;, u&apos;n2588129&apos;, u&apos;index_2603340_48.html&apos;],
+   [u&apos;n2588025&apos;, u&apos;n2588134&apos;, u&apos;index.html&apos;],
+   [u&apos;n2588025&apos;, u&apos;n2588129&apos;, u&apos;index_2603340_602.html&apos;],
+   [u&apos;dbsource&apos;, u&apos;7483922&apos;, u&apos;7483923.png&apos;],
+   [u&apos;n2588035&apos;, u&apos;n2588330&apos;, u&apos;n2588360&apos;, u&apos;index.html&apos;],
+   [u&apos;template&apos;, u&apos;2587932&apos;, u&apos;2587963.jpg&apos;],
+   [u&apos;wz_header_index.html&apos;],
+   [u&apos;template&apos;, u&apos;2587932&apos;, u&apos;2588004.css&apos;],
+   [u&apos;template&apos;, u&apos;2587932&apos;, u&apos;2588003.js&apos;],
+   [u&apos;template&apos;, u&apos;4395330&apos;, u&apos;4395352.jpg&apos;],
+   [u&apos;n2588030&apos;, u&apos;n2588919&apos;, u&apos;index.html&apos;],
+   [u&apos;n2588035&apos;, u&apos;index.html&apos;],
+   [u&apos;n2588025&apos;, u&apos;n2588129&apos;, u&apos;index_2603340_604.html&apos;],
+   [u&apos;n2588025&apos;, u&apos;n2588129&apos;, u&apos;c2727064&apos;, u&apos;part&apos;, u&apos;2727065.jpg&apos;],
+   [u&apos;n2588025&apos;, u&apos;n2588129&apos;, u&apos;index_2603340_603.html&apos;],
+   [u&apos;n2588025&apos;, u&apos;n2588124&apos;, u&apos;c12360091&apos;, u&apos;part&apos;, u&apos;12360141.jpg&apos;],
+   [u&apos;n1180&apos;, u&apos;n1196&apos;, u&apos;n3190&apos;, u&apos;n5828&apos;, u&apos;index.html&apos;],
+   [u&apos;template&apos;, u&apos;2587932&apos;, u&apos;2588002.js&apos;],
+   [u&apos;n2588025&apos;, u&apos;n4423279&apos;, u&apos;index.html&apos;],
+   [u&apos;dbsource&apos;, u&apos;8189074&apos;, u&apos;8189075.js&apos;],
+   [u&apos;dbsource&apos;, u&apos;9169590&apos;, u&apos;9169591.png&apos;],
+   [u&apos;dbsource&apos;, u&apos;8189074&apos;, u&apos;8189077.js&apos;],
+   [u&apos;dbsource&apos;, u&apos;11869722&apos;, u&apos;11869731.jpg&apos;],
+   [u&apos;template&apos;, u&apos;2587932&apos;, u&apos;2588005.js&apos;],
+   [u&apos;template&apos;, u&apos;4395330&apos;, u&apos;4395429.css&apos;],
+   [u&apos;n2588020&apos;,
+    u&apos;n2588072&apos;,
+    u&apos;n2590860&apos;,
+    u&apos;n2590862&apos;,
+    u&apos;c10267787&apos;,
+    u&apos;content.html&apos;],
+   [u&apos;n2588025&apos;, u&apos;n2588129&apos;, u&apos;index_2603340_605.html&apos;]])]
+</code></pre><h3 id="&#x7EDF;&#x8BA1;">&#x7EDF;&#x8BA1;</h3>
+<pre><code>          #################          &#x7EDF;&#x8BA1;&#x6570;&#x636E;   ############
+#&#x7EDF;&#x8BA1;&#x4E00;&#x4E2A;gov.cn&#x4E0B;&#x7684;&#x8FDE;&#x63A5;&#x6570;&#x76EE;
+def count_gov_url(tup2):
+    return (tup2[0],len(tup2[1]))
+
+host_url_count_rdd = host_url_duplicate_rdd.map(lambda x: count_gov_url(x))
+#rdd &#x8F6C;&#x5316;&#x4E3A; df
+Path = Row(&quot;path&quot;, &quot;count&quot;)
+rdd_path=host_url_count_rdd.map(lambda r: Path(*r))
+df_path =  spark.createDataFrame(rdd_path)
+df_path.show()
+</code></pre><p><strong>&#x672A;&#x5B8C;&#x6210;&#xFF1A;&#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x8DEF;&#x5F84; &#xFF08;&#x6B63;&#x5728;&#x505A;&#xFF09;</strong></p>
+<p><strong>&#x601D;&#x8DEF;&#xFF1A;&#x5229;&#x7528;&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x5217;&#x8868;&#xFF0C;&#x6211;&#x60F3;&#x5229;&#x7528;&#x4E00;&#x4E2A;&#x6811;&#x7ED3;&#x6784;&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;&#x201C;xx.gov.cn&#x201D;&#x4E0B;&#x7684;&#x4E8C;&#x7EF4;&#x5217;&#x8868;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x591A;&#x53C9;&#x6811;&#xFF0C;&#x8FD9;&#x6837;&#x4EE5;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x9012;&#x5F52;&#x67E5;&#x8BE2;&#x5404;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x8DEF;&#x5F84;&#x6570;&#x76EE;</strong></p>
+<h2 id="&#x9700;&#x6C42;&#x4E09;">&#x9700;&#x6C42;&#x4E09;</h2>
+<pre><code>#&#x7EDF;&#x8BA1; requestContentType &#x7C7B;&#x578B;&#x4EE5;&#x53CA;&#x6570;&#x91CF;
+# print df.groupby(&quot;requestContentType&quot;).count().count()
+# df.groupby(&quot;requestContentType&quot;).count().show(12834)
+
+df_filter = df.groupby(&quot;requestContentType&quot;).count()
+
+#&#x7EDF;&#x8BA1; responseCharset &#x7C7B;&#x578B;&#x4EE5;&#x53CA;&#x6570;&#x91CF;
+
+#print df.groupby(&quot;responseCharset&quot;).count().count()
+print df.groupby(&quot;responseCharset&quot;).count().show(44)
+</code></pre><p>&#x200B;        </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="task.html#数据的预处理" class="navigation navigation-next " aria-label="Next page: 数据预处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"需求二","level":"1.2","depth":1,"next":{"title":"数据预处理","level":"1.3","depth":1,"anchor":"#数据的预处理","path":"task.md","ref":"task.md#数据的预处理","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"task.md","mtime":"2019-11-15T14:29:41.301Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-15T14:31:38.247Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
